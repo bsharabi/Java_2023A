@@ -9,7 +9,7 @@ public class Matrix_07 {
         //----------- way 1 to craete a mtrix ---------
         int[] arr01 = {1, 1, 1};
         int[][] matrix1 = {new int[]{1, 1, 1}, new int[]{1, 1, 1}};
-
+        //Perfect
 
         //----------- way 2 to craete a mtrix ---------
         int[] arr02 = new int[]{1, 1, 1};
