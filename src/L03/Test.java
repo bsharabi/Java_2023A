@@ -1,4 +1,4 @@
-package L03.ClassTask;
+package L03;
 
 // יצירת תבנית חדשה בשם טסט או ניתן גם להגיד שיצרנו טיפוס נתונים חדש בשם טסט
 public class Test {
