@@ -1,4 +1,4 @@
-package L02.InterfaceExtendsInterface;
+package L03.InterfaceExtendsInterface;
 
 interface IVehicle{
 	boolean moveForward( int x );

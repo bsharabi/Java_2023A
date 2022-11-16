@@ -1,4 +1,4 @@
-package L02.exceptions;
+package L03.exceptions;
 
 public class TestEx {
 

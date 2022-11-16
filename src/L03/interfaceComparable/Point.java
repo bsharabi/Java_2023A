@@ -2,7 +2,7 @@
  * this class represent a 2d point in the plane. <br>
  * supports several operations on points in the plane.
  */
-package L02.interfaceComparable;
+package L03.interfaceComparable;
 
 public final class Point implements Comparable<Point> {
 	private double _x; 

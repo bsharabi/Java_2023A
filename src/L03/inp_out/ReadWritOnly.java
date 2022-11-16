@@ -1,4 +1,4 @@
-package L02.inp_out;
+package L03.inp_out;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

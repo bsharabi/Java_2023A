@@ -1,4 +1,4 @@
-package L02.exceptions;
+package L03.exceptions;
 
  /**
  * An easy interface to read numbers and strings from 
