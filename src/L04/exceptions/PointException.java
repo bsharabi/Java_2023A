@@ -1,5 +1,5 @@
 
-package L03.exceptions;
+package L04.exceptions;
 
 public class PointException extends Exception{
 	private static final long serialVersionUID = 1L;

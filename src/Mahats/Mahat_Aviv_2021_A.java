@@ -1,11 +1,10 @@
 package Mahats;
 
 public class Mahat_Aviv_2021_A {
-
+    int i;
     public static void main(String[] args) {
         int[] arr = {1, 7, 3, 0, 13, 131, 44};
         System.out.println(Q4(arr));
-
     }
 
     public static boolean Q4(int[] arr) {

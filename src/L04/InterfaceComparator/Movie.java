@@ -1,4 +1,4 @@
-package L03.InterfaceComparator;
+package L04.InterfaceComparator;
 
 import java.util.Comparator;
 
