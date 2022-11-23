@@ -1,4 +1,4 @@
-package L04.exceptions;
+package L05.exceptions;
 
  /**
  * An easy interface to read numbers and strings from 

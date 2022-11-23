@@ -11,7 +11,7 @@ public class ID123456789 {
 
     }
 
-    public static boolean q3_A() {
+    public static boolean q3_A(int[] arr) {
         return true;
     }
 

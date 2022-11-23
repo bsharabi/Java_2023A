@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/ZAsus/OneDrive - Ariel University/Documents/IdeaProjects/Java_2023A/src/L04/UML.java</OriginalElement>
+  <nodes>
+    <node x="318.0" y="324.0">L04.Student</node>
+    <node x="354.0" y="12.5">L04.B</node>
+    <node x="0.0" y="448.0">L04.UML</node>
+    <node x="199.35714285714283" y="106.0">L04.Person</node>
+    <node x="267.0" y="0.0">L04.A</node>
+    <node x="0.0" y="324.0">L04.Employee</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="L04.Person" target="L04.A" relationship="TO_ONE">
+      <point x="-81.66666666666669" y="-84.0" />
+      <point x="240.19047619047615" y="81.0" />
+      <point x="283.75" y="81.0" />
+      <point x="-16.75" y="28.0" />
+    </edge>
+    <edge source="L04.Person" target="L04.A" relationship="DEPENDENCY">
+      <point x="0.0" y="-84.0" />
+      <point x="321.85714285714283" y="81.0" />
+      <point x="317.25" y="81.0" />
+      <point x="16.75" y="28.0" />
+    </edge>
+    <edge source="L04.Person" target="L04.B" relationship="REALIZATION">
+      <point x="81.66666666666669" y="-84.0" />
+      <point x="403.5238095238095" y="81.0" />
+      <point x="384.5" y="81.0" />
+      <point x="0.0" y="15.5" />
+    </edge>
+    <edge source="L04.Employee" target="L04.Person" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.5" />
+      <point x="149.0" y="299.0" />
+      <point x="321.85714285714283" y="299.0" />
+      <point x="0.0" y="84.0" />
+    </edge>
+    <edge source="L04.Student" target="L04.Person" relationship="GENERALIZATION">
+      <point x="0.0" y="-39.5" />
+      <point x="462.0" y="299.0" />
+      <point x="321.85714285714283" y="299.0" />
+      <point x="0.0" y="84.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.3" showDependencies="true" x="358.1538461538462" y="270.61538461538464" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

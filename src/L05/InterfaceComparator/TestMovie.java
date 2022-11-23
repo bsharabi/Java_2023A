@@ -1,4 +1,4 @@
-package L04.InterfaceComparator;
+package L05.InterfaceComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
