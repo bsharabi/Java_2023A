@@ -1,6 +1,7 @@
 package Mahats;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 class Main {
 
@@ -16,6 +17,37 @@ public class Mahat_Aviv_2021_A {
     public static void main(String[] args) {
         int[] arr = {1, 7, 3, 0, 13, 131, 44};
         System.out.println(Q4(arr));
+    }
+
+    //O(1)
+    public static void Q1() {
+        int i = 0;
+        Scanner sc = new Scanner(System.in);
+        int countEven = 0;
+        int sumOdd = 0;
+        while (i != 40) {
+            int num = sc.nextInt();
+            if (num < 0) {
+                System.out.println("Invalid ");
+                continue;
+            }
+            countEven += (num % 2 == 0) ? 1 : 0;
+            sumOdd += (num % 2 != 0) ? num : 0;
+            i++;
+            if (num > 99 && num < 1000) {
+                int sum = 0;
+                while (num != 0) {
+                    sum += num % 10;
+                    num /= 10;
+                }
+                System.out.println(sum);
+            }
+            System.out.println(sumOdd);
+            System.out.println(countEven);
+
+        }
+
+
     }
 
     //O(n)
@@ -64,6 +96,43 @@ public class Mahat_Aviv_2021_A {
             i++;
         }
         return true;
+    }
+
+    //O(n)
+    public static boolean Q6(String str) {
+        boolean found = false;
+        if (str == null || str.length() < 3)
+            return false;
+
+        int size = str.length();
+
+        if (str.charAt(0) == '.' || str.charAt(size - 1) == '.')
+            return false;
+        for (int i = 1; i < size - 1; i++) {
+            if (str.charAt(i) == '.' && (str.charAt(i - 1) != '.' || str.charAt(i + 1) != '.')) {
+                found = true;
+            }
+        }
+
+        return found;
+    }
+
+    public static boolean Q9_a(String str) {
+        if (str == null)
+            return false;
+        String subStr = "";
+        for (int i = 0, size = str.length(); i < size; i++) {
+            char ch = str.charAt(i);
+            subStr += (ch >= 'A' && ch <= 'Z') ? ch : "";
+        }
+        System.out.println(subStr);
+
+        int j=subStr.length();
+        for (int i = 0; i <=j ;j--, i++) {
+            if(subStr.charAt(i)!=subStr.charAt(j))
+                return false;
+        }
+        return subStr.length()!=0;
     }
 }
 //------------------------ Q3 ------------------------------
@@ -129,6 +198,9 @@ class Tank {
 
     }
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//------------------------ Q7 ------------------------------
 
 class Battery {
 
@@ -214,15 +286,15 @@ class BatteryPack {
     //O(1)
     public static void checkPrice(BatteryPack batteries, double sum) {
         if (sum < 0 || batteries == null)
-            System.out.println( "Invalid Argument");
+            System.out.println("Invalid Argument");
 
         if (batteries.getPrice() - sum < 0)
-            System.out.println( "It is possible to purchase " + (sum - batteries.getPrice()));
+            System.out.println("It is possible to purchase " + (sum - batteries.getPrice()));
         else if (batteries.getPrice() - sum > 0)
 
-            System.out.println(  "It isn't possible to purchase " + (batteries.getPrice() - sum));
+            System.out.println("It isn't possible to purchase " + (batteries.getPrice() - sum));
         else
-            System.out.println( "O.K.");
+            System.out.println("O.K.");
     }
 
     //O(1)
@@ -240,3 +312,4 @@ class BatteryPack {
         return sumVolt >= v;
     }
 }
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
