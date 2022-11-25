@@ -1,15 +1,8 @@
 package Mahats;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
-
-class Main {
-
-    public static void main(String[] args) {
-
-    }
-
-}
 
 public class Mahat_Aviv_2021_A {
     int i;
@@ -17,6 +10,18 @@ public class Mahat_Aviv_2021_A {
     public static void main(String[] args) {
         int[] arr = {1, 7, 3, 0, 13, 131, 44};
         System.out.println(Q4(arr));
+        Random rd = new Random();
+        String[] colors = {"Red", "Green", "Blue"};
+        Box[] boxes = new Box[10];
+        for (int i = 0; i < boxes.length; i++) {
+            boxes[i] = new
+                    Box(rd.nextInt(10) + 1, rd.nextInt(10) + 1, rd.nextInt(10) + 1, colors[rd.nextInt(3)]);
+        }
+        for (int i = 0; i < boxes.length; i++) {
+            System.out.println(boxes[i]);
+        }
+        System.out.println();
+        System.out.println(Q2(boxes));
     }
 
     //O(1)
@@ -48,6 +53,26 @@ public class Mahat_Aviv_2021_A {
         }
 
 
+    }
+
+    public static String Q2(Box[] boxArr) {
+        int
+                min = boxArr[0].getHeight() * boxArr[0].getLength() * boxArr[0].getWidth();
+        String color = boxArr[0].getColor();
+        Box b = boxArr[0];
+        for (int i = 1; i < boxArr.length; i++) {
+            int
+                    sum = boxArr[i].getHeight() * boxArr[i].getLength() * boxArr[i].getWidth();
+            if (sum < min) {
+                b = boxArr[i];
+                min = sum;
+                color = boxArr[i].getColor();
+            }
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println(b);
+        return color;
     }
 
     //O(n)
@@ -127,14 +152,84 @@ public class Mahat_Aviv_2021_A {
         }
         System.out.println(subStr);
 
-        int j=subStr.length();
-        for (int i = 0; i <=j ;j--, i++) {
-            if(subStr.charAt(i)!=subStr.charAt(j))
+        int j = subStr.length();
+        for (int i = 0; i <= j; j--, i++) {
+            if (subStr.charAt(i) != subStr.charAt(j))
                 return false;
         }
-        return subStr.length()!=0;
+        return subStr.length() != 0;
+    }
+
+
+}
+
+//------------------------ Q2 ------------------------------
+
+class Box {
+    private int height;
+    private int width;
+    private int length;
+    private String color;
+
+    public Box(int height, int width, int length, String color) {
+        this.height = height;
+        this.width = width;
+        this.length = length;
+        this.color = color;
+    }
+
+    public Box(String color) {
+        this.height = 10;
+        this.width = 10;
+        this.length = 10;
+        this.color = color;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Box{" +
+                "height=" + height +
+                ", width=" + width +
+                ", length=" + length +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 //------------------------ Q3 ------------------------------
 
 class Tank {
