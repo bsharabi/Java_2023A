@@ -135,6 +135,7 @@ public class Mahat_Aviv_2021_A {
         return true;
     }
 
+    //O(?)
     public static boolean Q9_a(String str) {
         if (str == null)
             return false;
@@ -152,7 +153,6 @@ public class Mahat_Aviv_2021_A {
         }
         return subStr.length() != 0;
     }
-
 
 }
 
