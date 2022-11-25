@@ -125,21 +125,14 @@ public class Mahat_Aviv_2021_A {
 
     //O(n)
     public static boolean Q6(String str) {
-        boolean found = false;
-        if (str == null || str.length() < 3)
+        if (str == null || str.charAt(0)=='.' || str.charAt(str.length()-1)=='.'|| str.indexOf('.')==-1)
             return false;
-
-        int size = str.length();
-
-        if (str.charAt(0) == '.' || str.charAt(size - 1) == '.')
-            return false;
-        for (int i = 1; i < size - 1; i++) {
-            if (str.charAt(i) == '.' && (str.charAt(i - 1) != '.' || str.charAt(i + 1) != '.')) {
-                found = true;
+        for (int i = str.indexOf('+'); i < str.lastIndexOf('+'); i++) {
+            if (str.charAt(i) == '.' && str.charAt(i + 1) == '.' ) {
+                return false;
             }
         }
-
-        return found;
+        return true;
     }
 
     public static boolean Q9_a(String str) {
