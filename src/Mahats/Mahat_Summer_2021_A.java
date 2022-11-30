@@ -7,7 +7,7 @@ import java.util.Stack;
 public class Mahat_Summer_2021_A {
 
     public static void main(String[] args) {
-        int[] arr = g();
+        int[] arr = generate();
         System.out.println(Arrays.toString(arr));
         arr = gF();
         System.out.println(Arrays.toString(arr));
@@ -38,7 +38,7 @@ public class Mahat_Summer_2021_A {
         return index;
     }
 
-    public static int[] g() {
+    public static int[] generate() {
         Random rd = new Random();
         int size = rd.nextInt(20) + 10;
         System.out.println("Size = " + size);
@@ -69,5 +69,42 @@ public class Mahat_Summer_2021_A {
         for (int i = rand; i < size; i++)
             arr[i] = rd.nextInt(30);
         return arr;
+    }
+
+
+}
+
+class Gift {
+    private int code;
+    private double price;
+    private char type;
+
+    public void setType(char type) {
+        if (type == 'M' || type == 'F' || type == 'U' || type == 'K') {
+
+            this.type = type;
+        }
+    }
+
+    public boolean isForMan() {
+        return (type == 'U' || type == 'M') ? true : false;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public char getType() {
+        return type;
+    }
+
+    public Gift(int code, double price, char type) {
+        this.code = code;
+        this.price = price;
+        this.type = type;
     }
 }

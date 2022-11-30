@@ -11,7 +11,7 @@ class Mahat_Summer_2021_ATest {
     @Test
     void Q4Test(){
         for (int i = 0; i < 1000; i++) {
-            int[] arr = Mahat_Summer_2021_A.g();
+            int[] arr = Mahat_Summer_2021_A.generate();
             assertNotEquals(Mahat_Summer_2021_A.q4(arr),-1);
         }
         for (int i = 0; i < 1000; i++) {
