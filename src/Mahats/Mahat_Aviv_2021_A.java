@@ -5,24 +5,29 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Mahat_Aviv_2021_A {
-    int i;
+
 
     public static void main(String[] args) {
+        Q1();
+
+        Box[] boxes = createBoxArray(10);
+        String ans = Q2(boxes);
+        System.out.println(ans);
+
         int[] arr = {1, 7, 3, 0, 13, 131, 44};
-        System.out.println(Q4(arr));
-        Random rd = new Random();
-        String[] colors = {"Red", "Green", "Blue"};
-        Box[] boxes = new Box[10];
-        for (int i = 0; i < boxes.length; i++) {
-            boxes[i] = new
-                    Box(rd.nextInt(10) + 1, rd.nextInt(10) + 1, rd.nextInt(10) + 1, colors[rd.nextInt(3)]);
-        }
-        for (int i = 0; i < boxes.length; i++) {
-            System.out.println(boxes[i]);
-        }
-        System.out.println();
-        System.out.println(Q2(boxes));
+        boolean bool = Q4(arr);
+        System.out.println(bool);
+
+        bool = Q6("Hand..d");
+        System.out.println(bool);
+
+        Q8_a();
+
+        bool = Q9_a("A#gjBb&6A");
+        System.out.println(bool);
+
     }
+
 
     //O(1)
     public static void Q1() {
@@ -125,14 +130,55 @@ public class Mahat_Aviv_2021_A {
 
     //O(n)
     public static boolean Q6(String str) {
-        if (str == null || str.charAt(0)=='.' || str.charAt(str.length()-1)=='.'|| str.indexOf('.')==-1)
+        if (str == null || str.charAt(0) == '.' || str.charAt(str.length() - 1) == '.' || str.indexOf('.') == -1)
             return false;
         for (int i = str.indexOf('+'); i < str.lastIndexOf('+'); i++) {
-            if (str.charAt(i) == '.' && str.charAt(i + 1) == '.' ) {
+            if (str.charAt(i) == '.' && str.charAt(i + 1) == '.') {
                 return false;
             }
         }
         return true;
+    }
+
+    private static void Q8_a() {
+        Driver[] d = new Driver[5];
+        d[0] = new Driver("Yossi", "1234", 2000, 3);
+        d[1] = new Driver("Avi", "7596", 1980, 7);
+        d[2] = new Driver("Sara", "6051", 1995, 1);
+        d[3] = new Driver("Dani", "4472", 1998, 2);
+        d[4] = d[3];
+        int m = 0, s = 0;
+        int x = d[1].getTests();
+        d[1].setTests(d[3].getTests() + 2);
+        d[3].setTests(x);
+        for (int i = 0; i < d.length; i++) {
+            System.out.println(d[i].getTests());
+            s = s + d[i].getTests();
+            if (d[i].getYear() > 1995)
+                m++;
+        }
+        System.out.println((double) s / d.length);
+        System.out.println(m);
+
+    }
+
+
+    private static String[] Q8_b(Driver[] dArr, int num) {
+        if (dArr == null)
+            return null;
+
+        String[] temp = new String[dArr.length];
+        int k = 0;
+        for (int i = 0; i < dArr.length; i++) {
+            if (dArr[i].getTests() < num)
+                temp[k++] = dArr[i].getName();
+
+        }
+        String[] temp2 = new String[k];
+        for (int i = 0; i < k; i++) {
+            temp2[i] = temp[i];
+        }
+        return temp2;
     }
 
     //O(?)
@@ -154,6 +200,20 @@ public class Mahat_Aviv_2021_A {
         return subStr.length() != 0;
     }
 
+    private static Box[] createBoxArray(int size) {
+        Random rd = new Random();
+        Box[] boxes = new Box[size];
+        String[] colors = {"Red", "Green", "Blue"};
+        for (int i = 0; i < boxes.length; i++) {
+            boxes[i] = new
+                    Box(rd.nextInt(10) + 1, rd.nextInt(10) + 1, rd.nextInt(10) + 1, colors[rd.nextInt(3)]);
+        }
+        for (int i = 0; i < boxes.length; i++) {
+            System.out.println(boxes[i]);
+        }
+        System.out.println();
+        return boxes;
+    }
 }
 
 //------------------------ Q2 ------------------------------
@@ -401,3 +461,49 @@ class BatteryPack {
     }
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+class Driver {
+    private String name;
+    private String id;
+    private int year;
+    private int tests;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getTests() {
+        return tests;
+    }
+
+    public void setTests(int tests) {
+        this.tests = tests;
+    }
+
+    public Driver(String name, String id, int year, int tests) {
+        this.name = name;
+        this.id = id;
+        this.year = year;
+        this.tests = tests;
+    }
+}
