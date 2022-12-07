@@ -8,6 +8,7 @@ public class Mahat_Aviv_2021_A {
 
 
     public static void main(String[] args) {
+        int ansInt;
         Q1();
 
         Box[] boxes = createBoxArray(10);
@@ -25,9 +26,11 @@ public class Mahat_Aviv_2021_A {
 
         bool = Q9_a("A#gjBb&6A");
         System.out.println(bool);
+        ansInt= Q10_a(10);
+        ansInt= Q10_b(new int[]{});
+        bool= Q10_c(new int[]{});
 
     }
-
 
     //O(1)
     public static void Q1() {
@@ -198,6 +201,45 @@ public class Mahat_Aviv_2021_A {
                 return false;
         }
         return subStr.length() != 0;
+    }
+
+    //O(t)
+    private static int Q10_a(int number) {
+        int count=0;
+        while(number!=0){
+            int digit =number%10;
+            if(digit%2==0)
+                count++;
+            number/=10;
+
+        }
+        return count;
+    }
+
+    //O(n*t) t = max{Q10_a(arr[i])}
+    private static int Q10_b(int[] arr ) {
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            int countEven = Q10_a(arr[i]);
+            if(countEven>max)
+                max=Q10_a(arr[i]);
+        }
+        return max;
+    }
+
+    //O(nt)
+    private static boolean Q10_c(int[] arr) {
+        int maxDeg = Q10_b(arr);
+
+        int[] isOrderDeg = new int[maxDeg+1];
+        for (int i = 0; i < arr.length; i++) {
+            isOrderDeg[Q10_a(arr[i])]++;
+        }
+        for (int i = 0; i < isOrderDeg.length; i++) {
+            if(isOrderDeg[i]!=1)
+                return false;
+        }
+        return true;
     }
 
     private static Box[] createBoxArray(int size) {
