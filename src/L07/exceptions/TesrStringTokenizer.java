@@ -1,4 +1,4 @@
-package L07.exceptions;
+package L06.exceptions;
 
 import java.util.StringTokenizer;
 

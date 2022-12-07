@@ -1,4 +1,4 @@
-package L07.exceptions;
+package L06.exceptions;
 
 public class TestEx {
 

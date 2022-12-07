@@ -1,4 +1,4 @@
-package L07.inp_out;
+package L06.inp_out;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
