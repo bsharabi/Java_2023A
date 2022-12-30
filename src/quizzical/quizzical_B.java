@@ -82,7 +82,7 @@ public class quizzical_B {
             this.color = color;
         }
 
-        public boolean isSameBook(Car c){
+        public boolean isSameCar(Car c){
 
             return (c.type.equals(type)&& c.model.equals(model));
         }
