@@ -6,11 +6,16 @@ import java.util.Random;
 public class Mahat_Aviv_2022_A {
 
     public static void main(String[] args) {
-        int[] arr = q4(5);
+
+        int[] arr = q2(5);
         System.out.println(Arrays.toString(arr));
+
+
+
     }
 
-    private static int[] q4(int n) {
+
+    private static int[] q2(int n) {
         Random rd = new Random();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
