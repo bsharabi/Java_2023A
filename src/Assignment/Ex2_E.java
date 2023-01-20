@@ -1,2 +1,4 @@
-package Assignment;public class Ex2_E {
+package Assignment;
+
+public class Ex2_E {
 }
