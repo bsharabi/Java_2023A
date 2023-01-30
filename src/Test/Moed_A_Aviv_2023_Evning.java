@@ -87,7 +87,7 @@ public class Moed_A_Aviv_2023_Evning {
                             orangeTrees[i].orangeInDay(new Random().nextInt(15), j);
                     }
                     System.out.println(Arrays.deepToString(orangeTrees));
-                    System.out.println(orangeTrees[0].getAmount());
+                    System.out.println(orangeTrees[0].getAmountIn90());
                     System.out.println(orangeTrees[1].compare(orangeTrees[2]));
                     System.out.println(OrangeTree.getMaxAmount(orangeTrees));
                     break;
@@ -322,7 +322,7 @@ public class Moed_A_Aviv_2023_Evning {
             return orange[day];
         }
 
-        public int getAmount() {
+        public int getAmountIn90() {
             int sum = 0;
             for (int i = 0; i < orange.length; i++) {
                 sum += orange[i];
@@ -331,14 +331,14 @@ public class Moed_A_Aviv_2023_Evning {
         }
 
         public boolean compare(OrangeTree o) {
-            return getAmount() == o.getAmount();
+            return getAmountIn90() == o.getAmountIn90();
         }
 
         public static int getMaxAmount(OrangeTree[] orangeTrees) {
-            int max = orangeTrees[0].getAmount();
+            int max = orangeTrees[0].getAmountIn90();
             for (int i = 0; i < orangeTrees.length; i++) {
-                if (max < orangeTrees[i].getAmount())
-                    max = orangeTrees[i].getAmount();
+                if (max < orangeTrees[i].getAmountIn90())
+                    max = orangeTrees[i].getAmountIn90();
             }
             return max;
         }
